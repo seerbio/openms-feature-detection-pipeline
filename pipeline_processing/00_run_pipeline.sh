@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPTS/01_detect_features.sh
+SCRIPTS/02_rt_alignment.sh
+SCRIPTS/03_link_features.sh
+SCRIPTS/04_generate_seed_lists.sh
+SCRIPTS/05_redetect_features.sh
+SCRIPTS/06_parse_featureXMLs.R
+SCRIPTS/07_filter_overlapping_features_redetect.R
+SCRIPTS/08_remove_overlapping_features.py
+SCRIPTS/09_merge_redetected_features.sh
+SCRIPTS/10_link_features_final.sh
+SCRIPTS/11_parse_consensusXML_final.R
