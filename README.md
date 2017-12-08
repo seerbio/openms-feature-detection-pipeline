@@ -7,7 +7,11 @@
 1. Install Docker on your system
         [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
 
-2. Grab the latest OpenMS container and install them on your system    
+2. By default, docker commands require root/sudo.  To configure access without sudo, execute the following command, then logout/login:
+
+        sudo usermod -aG docker
+
+3. Grab the latest OpenMS container and install them on your system    
         [https://github.com/OpenMS/OpenMS/wiki/OpenMS-Docker-Containers](https://github.com/OpenMS/OpenMS/wiki/OpenMS-Docker-Containers)
 
     - Choose the *OpenMS executables* container -- the pipeline only needs the OpenMS executable since all operations will be running from the commandline.  
@@ -16,11 +20,11 @@
           docker pull hroest/openms-executables-2.2
 
 
-3. After the container is downloaded, you can verify it's there via the command below.  Also note the full name of the container image under the REPOSITORY heading.  This name needs to be used in the 00_start_openms_container.sh script.
+4. After the container is downloaded, you can verify it's there via the command below.  Also note the full name of the container image under the REPOSITORY heading.  This name needs to be used in the 00_start_openms_container.sh script.
 
         docker images
 
-4. Review the ```00_start_openms_container.sh``` and update the docker image name variable ```docker_img_name``` to that from the ```docker images``` command.
+5. Review the ```00_start_openms_container.sh``` and update the docker image name variable ```docker_img_name``` to that from the ```docker images``` command.
 
 
 ## Running the Pipeline
