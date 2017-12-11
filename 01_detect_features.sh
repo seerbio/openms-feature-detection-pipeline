@@ -6,7 +6,7 @@ input_data_dir=$1
 
 # Pipeline, Step 2
 cd pipeline_processing
-./SCRIPTS/SCRIPTS/02_run_pipeline_step02.sh
+./SCRIPTS/02_run_pipeline_step02.sh
 cd ..
 
 # Pipeline, Step 3
@@ -14,6 +14,6 @@ cd ..
 
 # Pipeline, Step 4
 cd pipeline_processing
-./SCRIPTS/SCRIPTS/04_run_pipeline_step04.sh
+./SCRIPTS/04_run_pipeline_step04.sh
 cd ..
 
