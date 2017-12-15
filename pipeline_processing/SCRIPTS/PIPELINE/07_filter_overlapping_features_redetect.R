@@ -2,13 +2,10 @@ library(stringr)
 library(tidyverse)
 
 
-base_fns_1 <- paste0("20171116_",
-              str_pad(1:18, width = 3, pad = "0"))
-base_fns_2 <- paste0("20171117_",
-              str_pad(1:17, width = 3, pad = "0"))
-base_fns_3 <- paste0("20171120_",
-              str_pad(1:17, width = 3, pad = "0"))
-base_fns <- c(base_fns_1, base_fns_2, base_fns_3)
+# Get the base names of all the input files
+input_data_dir <- commandArgs(TRUE)[1]
+base_fns <- list.files(input_data_dir, pattern = "\\.mzML$")
+base_fns <- str_replace_all(base_fns, pattern = "\\.mzML$", "")
 
 
 in1_fns <- paste0(base_fns, "_features_rta.csv")

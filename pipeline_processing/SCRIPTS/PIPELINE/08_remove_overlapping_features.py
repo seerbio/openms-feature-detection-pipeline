@@ -2,6 +2,12 @@
 
 import re
 import os
+import sys
+import glob
+
+
+input_data_dir = sys.argv[1]
+fns = glob.glob(input_data_dir + "/*.mzML")
 
 # Redetected feature files, featureXML format
 in_fns = []
@@ -10,45 +16,14 @@ rm_fns = []
 # Output file names
 out_fns = []
 
-
 # Prep the file names
-for i in range(1, 18 + 1):
-    file_num = str(i).zfill(3)
+for i, fn in enumerate(fns):
+    fn = os.path.basename(fn)
+    fn = os.path.splitext(fn)[0]
 
-    tmp_fn = "20171116_" + file_num + "_features_rta_redetected.featureXML"
-    in_fns.append(tmp_fn)
-
-    tmp_fn = "20171116_" + file_num + "_feature_ids_redetected_rm.csv"
-    rm_fns.append(tmp_fn)
-
-    tmp_fn = "20171116_" + file_num + "_features_rta_redetected_overlap_rm.featureXML"
-    out_fns.append(tmp_fn)
-
-
-for i in range(1, 17 + 1):
-    file_num = str(i).zfill(3)
-
-    tmp_fn = "20171117_" + file_num + "_features_rta_redetected.featureXML"
-    in_fns.append(tmp_fn)
-
-    tmp_fn = "20171117_" + file_num + "_feature_ids_redetected_rm.csv"
-    rm_fns.append(tmp_fn)
-
-    tmp_fn = "20171117_" + file_num + "_features_rta_redetected_overlap_rm.featureXML"
-    out_fns.append(tmp_fn)
-
-
-for i in range(1, 17 + 1):
-    file_num = str(i).zfill(3)
-
-    tmp_fn = "20171120_" + file_num + "_features_rta_redetected.featureXML"
-    in_fns.append(tmp_fn)
-
-    tmp_fn = "20171120_" + file_num + "_feature_ids_redetected_rm.csv"
-    rm_fns.append(tmp_fn)
-
-    tmp_fn = "20171120_" + file_num + "_features_rta_redetected_overlap_rm.featureXML"
-    out_fns.append(tmp_fn)
+    in_fns.append(fn + "_features_rta_redetected.featureXML")
+    rm_fns.append(fn + "_feature_ids_redetected_rm.csv")
+    out_fns.append(fn + "_features_rta_redetected_overlap_rm.featureXML")
 
 
 feats_rm = []
@@ -98,7 +73,7 @@ for fn1, fn2, ofn in zip(rm_fns, in_fns, out_fns):
             ofs.write(line_orig)
 
         line = ifs2.readline()
-    
+
     ifs2.close()
     ofs.close()
 
