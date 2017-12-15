@@ -45,3 +45,8 @@ feat_data <- tibble(group_id = map_chr(feat_grps, function(x) xml_attr(x, "id"))
 
 saveRDS(feat_data, "feature_data_final.rds")
 
+# Make an unnested version too, and
+# remove the charge column, since it's already in the nested feature data
+feat_data <- feat_data %>% select(-charge)
+feat_data <- unnest(feat_data, feature_data)
+write.table(feat_data, "feature_data_final.csv", row.names = FALSE, sep = ",")
