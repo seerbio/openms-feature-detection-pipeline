@@ -16,7 +16,7 @@ exe_script=$3
 # The directory path on the local system
 # where the pipeline processing will occur
 # and output files will be written
-output_data_dir=`pwd`/output_dir_name
+output_data_dir=`pwd`/$output_dir_name
 scripts_dir=`pwd`/SCRIPTS
 ini_dir=`pwd`/INI
 
