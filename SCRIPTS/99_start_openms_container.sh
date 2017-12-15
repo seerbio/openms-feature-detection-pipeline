@@ -7,8 +7,11 @@ docker_img_name=hroest/openms-executables-2.2
 # where the input data (mzML) are located
 input_data_dir=$1
 
+# The directory to write the results to
+output_dir=$2
+
 # The path to the script to execute
-exe_script=$2
+exe_script=$3
 
 # The directory path on the local system
 # where the pipeline processing will occur
@@ -24,6 +27,6 @@ docker run -it \
   -v $output_data_dir:/pipeline_processing \
   -v $scripts_dir:/SCRIPTS \
   -v $ini_dir:/INI \
-  -w /pipeline_processing \
+  -w $output_dir \
    $docker_img_name \
    $exe_script
