@@ -13,7 +13,7 @@ do
   fnsl=${fn}_seed_list.featureXML
   outfn=${fn}_features_rta_redetected.featureXML
   
-  FeatureFinderCentroided -ini INI/feature_finder_centroided_seed_list.ini \
+  FeatureFinderCentroided -ini ../INI/feature_finder_centroided_seed_list.ini \
     -in $fnrta \
     -seeds $fnsl \
     -out $outfn

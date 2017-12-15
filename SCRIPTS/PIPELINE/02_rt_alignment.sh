@@ -21,7 +21,7 @@ do
 done
 
 echo "Performing RT Alignment..."
-MapAlignerPoseClustering -ini INI/map_aligner_pose_clustering.ini \
+MapAlignerPoseClustering -ini ../INI/map_aligner_pose_clustering.ini \
   -in $featfiles \
   -out $rtaoutfiles \
   -trafo_out $trafooutfiles
@@ -36,7 +36,7 @@ do
   trafofn=${fn}_rta.trafoXML
   rtafn=${fn}_centroided_rta.mzML
 
-  MapRTTransformer -ini INI/map_rt_transformer.ini \
+  MapRTTransformer -ini ../INI/map_rt_transformer.ini \
     -in $centfn \
     -trafo_in $trafofn \
     -out $rtafn
