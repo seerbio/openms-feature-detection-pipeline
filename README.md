@@ -6,6 +6,11 @@
 
 1. On your local machine make sure you have Python3 and R installed so that `python3` and `Rscripts` are on your path.
 
+2. Make sure the following R packages are installed - 
+
+    * stringr
+    * xml2
+
 ## Set-up
 
 1. Install Docker on your system
