@@ -2,6 +2,10 @@
 
 *Pipeline for feature detection using OpenMS*
 
+## Prerequisites
+
+1. On your local machine make sure you have Python3 and R installed so that `python3` and `Rscripts` are on your path.
+
 ## Set-up
 
 1. Install Docker on your system
