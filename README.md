@@ -10,6 +10,7 @@
 
     * stringr
     * xml2 (which in turn is dependent on `libxml2-dev`)
+    * tidyverse
 
 ## Set-up
 
