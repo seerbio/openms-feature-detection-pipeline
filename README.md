@@ -9,7 +9,7 @@
 2. Make sure the following R packages are installed - 
 
     * stringr
-    * xml2
+    * xml2 (which in turn is dependent on `libxml2-dev`)
 
 ## Set-up
 
