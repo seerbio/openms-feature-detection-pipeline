@@ -10,6 +10,8 @@
 
     * stringr
     * xml2 (which in turn is dependent on `libxml2-dev`)
+    * curl (which in turn is dependent on `libcurl-dev`)
+    * openssl (which in turn is dependent on `openssl-devel`)
     * tidyverse
 
 ## Set-up
@@ -48,9 +50,9 @@
 
 4. This will start the docker container and change the working directory to the pipeline_processing sub-directory where the pipeline will run and the output files will be written.
 
-5. Execute the pipeline running the script ```00_run_pipeline.sh```.  This main script will run a series of processing scripts which are all located under the ```SCRIPTS``` directory.  These scripts also refer to parameter input files located in the ```INI``` directory.  Generally speaking, the user will not need to modify the processing scripts or the parameter files.  For logging purposes the pipeline can be run as:
+5. This main script will run a series of processing scripts which are all located under the ```SCRIPTS``` directory.  These scripts also refer to parameter input files located in the ```INI``` directory.  Generally speaking, the user will not need to modify the processing scripts or the parameter files.  For logging purposes the pipeline can be run as:
 
-        00_run_pipeline.sh &> pipeline_log.txt
+        ./01_detect_features.sh /path/to/inputdata &> pipeline_log.txt
 
 6. Depending on the number and size of the input files, the pipeline processing might take a long time.  These docker commands are helpful for managing your session:
     * detach from a running docker instance: ```CTRL-P, CTRL-Q```
